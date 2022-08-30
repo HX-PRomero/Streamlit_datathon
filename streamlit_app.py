@@ -4,12 +4,12 @@ import numpy as np
 import plotly.express as px
 from PIL import Image
 
-st.set_page_config(page_title = 'Gráficos',layout = 'wide')
+st.set_page_config(page_title = 'Datathon',layout = 'wide')
 
-image = Image.open('Prueba_streamlit/portada.jpg')
+image = Image.open('images/portada.jpg')
 st.image(image)
 
-titulo = Image.open('Prueba_streamlit/titulo.png')
+titulo = Image.open('images/titulo.png')
 st.image(titulo)
 st.markdown("<br></br>",unsafe_allow_html=True)
 
@@ -18,7 +18,7 @@ st.markdown("<br></br>",unsafe_allow_html=True)
 
 
 # Se importa csv
-metrics=pd.read_csv('Prueba_streamlit/metrics.csv')
+metrics=pd.read_csv('images/metrics.csv')
 metrics = metrics.sort_values('ECM').reset_index(drop=True)
 
 names = metrics.Nombre.values
@@ -51,7 +51,7 @@ with col2:
     st.markdown(f"<h1 style='text-align:left; color:red;'> Peor marca {worst} </h1>",unsafe_allow_html=True)
 
 # Gráfica total alumnos
-    
+st.markdown("<br></br>",unsafe_allow_html=True)
 fig = px.histogram(metrics, x="ECM", nbins=7,text_auto=True)
 fig.update_layout(title={
     'text': 'Métricas globales',
