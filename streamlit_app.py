@@ -6,6 +6,12 @@ from PIL import Image
 
 st.set_page_config(page_title = 'Datathon',layout = 'wide')
 
+primaryColor="#F63366"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F0F2F6"
+textColor="#262730"
+font="sans serif"
+
 image = Image.open('images/portada.jpg')
 st.image(image)
 
@@ -18,7 +24,7 @@ st.markdown("<br></br>",unsafe_allow_html=True)
 
 
 # Se importa csv
-metrics=pd.read_csv('images/metrics.csv')
+metrics=pd.read_csv('metrics.csv')
 metrics = metrics.sort_values('ECM').reset_index(drop=True)
 
 names = metrics.Nombre.values
@@ -38,7 +44,7 @@ worst = np.round(metrics.ECM.values[-1],5)
 # Se expone resultado
 col1, col2 = st.columns(2)
 with col1:
-    copa = Image.open('Prueba_streamlit/copa.webp')
+    copa = Image.open('images/copa.webp')
     st.image(copa)
 
 with col2:
