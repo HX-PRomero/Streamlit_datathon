@@ -54,7 +54,7 @@ with col2:
     st.markdown("<br></br>",unsafe_allow_html=True)
 
     st.markdown(f"<h1 style='text-align:left; color:green;'> Mejor marca: {best}  </h1>",unsafe_allow_html=True)
-    st.markdown(f"<h1 style='text-align:left; color:red;'> Peor marca {worst} </h1>",unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align:left; color:red;'> Peor marca: {worst} </h1>",unsafe_allow_html=True)
 
 # Gráfica total alumnos
 st.markdown("<br></br>",unsafe_allow_html=True)
