@@ -23,8 +23,11 @@ title= 'selection'
 st.markdown("<br></br>",unsafe_allow_html=True)
 
 
-# Se importa csv
+# Se importan datasets y se hacen algunas tranformaciones
 metrics=pd.read_csv('metrics.csv')
+metrics.rename(columns={'Unnamed: 0':'GitHub'}, inplace=True)
+alumnos=pd.read_excel('Data 02 Alumnos.xlsx')
+metrics= metrics.merge(alumnos, on='GitHub')[['Nombre','ECM']]
 metrics = metrics.sort_values('ECM').reset_index(drop=True)
 
 names = metrics.Nombre.values
