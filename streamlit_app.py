@@ -12,7 +12,7 @@ secondaryBackgroundColor="#F0F2F6"
 textColor="#262730"
 font="sans serif"
 
-image = Image.open('images/portada.jpg')
+image = Image.open('images/soyhenry.png')
 st.image(image)
 
 titulo = Image.open('images/titulo.png')
