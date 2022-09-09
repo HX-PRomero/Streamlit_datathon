@@ -51,7 +51,7 @@ with col1:
     st.image(copa)
 
 with col2:
-    st.markdown(f"<h1 style='text-align:center; color:white;'> Puesto: {puesto} </h1>",unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align:center; color:gray;'> Puesto: {puesto} </h1>",unsafe_allow_html=True)
     st.markdown(f"<h1 style='text-align:center; color:yellow;'> RECM {error} </h1>",unsafe_allow_html=True)
 
     st.markdown("<br></br>",unsafe_allow_html=True)
