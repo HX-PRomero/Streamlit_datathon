@@ -1,3 +1,4 @@
+from math import sqrt
 import pandas as pd
 import os
 from time import sleep
@@ -6,14 +7,15 @@ def metrica(solution, response, metrica):
     if metrica == 'ECM':
         ecm = ((solution - response).sum()**2)/len(response)
         return ecm
+    if metrica == 'RECM':
+       recm = sqrt(((solution - response).sum()**2)/len(response))
+       return recm
 
-use_metric = 'ECM'
+use_metric = 'RECM'
 path_res = 'G:/My Drive/Datathon_responses/responses/'
 file_sol = 'G:/My Drive/Datathon_solutions/solution.csv'
 
 files = os.listdir(path_res)
-
-files.pop()
 
 solution = pd.read_csv(file_sol)
 responses = {}
