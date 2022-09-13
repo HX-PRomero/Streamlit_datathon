@@ -26,12 +26,15 @@ while True:
             continue
         name = file.split(' ')
         response = pd.read_csv(path_res + file)
-        responses[name[0]] = metrica(solution, response, use_metric)
-
-
+        try:
+            responses[name[0]] = metrica(solution, response, use_metric)
+        except:
+            continue
     metric = pd.DataFrame(responses.values(), index = responses.keys())
 
     metric.columns = [use_metric]
 
-    metric.to_csv('metrics.csv')
+    metric.sort_values('', axis = 1)
+
+    metric.to_csv('G:/My Drive/Datathon_solutions/metrics.csv')
     sleep(60)
