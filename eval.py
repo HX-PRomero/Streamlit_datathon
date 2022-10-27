@@ -21,9 +21,9 @@ def metrica(solution, response, metrica):
                 true_positive += 1
             elif (i==j) and (j == 0):
                 true_negative += 1
-            elif (i != j) and (j==0):
-                false_negative += 1
             elif (i != j) and (j==1):
+                false_negative += 1
+            elif (i != j) and (j==0):
                 false_positive += 1
         recall = true_positive/(true_positive+false_negative)
         accuracy= (true_positive + true_negative)/(true_positive + false_negative + true_negative + false_positive)
